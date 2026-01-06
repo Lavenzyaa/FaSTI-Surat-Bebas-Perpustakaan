@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Pengajuan Surat Cuti</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>FaSTI - Sistem Administrasi Non-Akademik</h1>
+</header>
+
+<nav>
+  <a href="index.html">Beranda</a>
+  <a href="izin.html">Perizinan Kegiatan</a>
+</nav>
+
+<main>
+  <div class="breadcrumb">
+    Beranda / Perizinan Kegiatan / Pengajuan Surat Cuti
+  </div>
+
+  <section class="card">
+    <h2>Form Pengajuan Surat Cuti</h2>
+
+    <form id="formCuti">
+      <label>Nama Lengkap *</label>
+      <input type="text" id="nama">
+
+      <label>NIM *</label>
+      <input type="text" id="nim">
+
+      <label>Program Studi *</label>
+      <input type="text" id="prodi">
+
+      <label>Alasan Cuti *</label>
+      <textarea id="alasan"></textarea>
+
+      <label>Durasi Cuti *</label>
+      <select id="durasi">
+        <option value="">-- Pilih --</option>
+        <option>1 Semester</option>
+        <option>2 Semester</option>
+      </select>
+
+      <button type="submit">Kirim Pengajuan</button>
+    </form>
+
+    <p id="pesan"></p>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 FaSTI</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
