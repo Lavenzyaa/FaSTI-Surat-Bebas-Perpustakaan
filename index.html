@@ -2,28 +2,41 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Tambahan untuk responsivitas -->
   <title>FaSTI - Sistem Administrasi Non-Akademik</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="navbar">
-  <h2>FaSTI - Sistem Administrasi Non-Akademik FSTI</h2>
-  <nav>
-    <a href="index.html">Beranda</a>
-    <a href="lacak-pengajuan.html">Lacak Pengajuan</a> <!-- Link diperbaiki -->
-  </nav>
+<header>
+  <h1>FaSTI - Sistem Administrasi Non-Akademik FSTI</h1>
+  <p>Fakultas Sains dan Teknologi Informasi</p>
 </header>
 
-<main class="container">
-  <h1>Selamat Datang</h1>
-  <p>Sistem Administrasi Non-Akademik Fakultas Sains dan Teknologi Informasi</p>
+<nav>
+  <a href="index.html">Beranda</a>
+  <a href="izin.html">Perizinan Kegiatan</a>
+</nav>
 
-  <a href="perizinan-kegiatan.html" class="btn-primary" aria-label="Akses halaman perizinan kegiatan">
-    Perizinan Kegiatan
-  </a>
+<main>
+  <section class="card">
+    <h2>Selamat Datang</h2>
+    <p>
+      Portal layanan mahasiswa untuk pengajuan administrasi non-akademik.
+    </p>
+
+    <button onclick="window.location.href='izin.html'">
+      Ajukan Perizinan
+    </button>
+  </section>
 </main>
+
+<footer>
+  <p>
+    Referensi pengembangan fitur dan alur sistem ini mengacu pada  
+    Portal Layanan Mahasiswa FaSTI – Sistem Informasi Layanan Mahasiswa
+    (fasti.roniwahyu.com)
+  </p>
+</footer>
 
 </body>
 </html>
