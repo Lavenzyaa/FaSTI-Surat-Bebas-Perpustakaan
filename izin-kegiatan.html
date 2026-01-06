@@ -3,36 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <title>Izin Kegiatan Organisasi</title>
-  <link rel="stylesheet" href="css/style.css">
-  <style>
-    /* Tambahan CSS sederhana untuk form (ganti dengan file eksternal jika perlu) */
-    form { display: flex; flex-direction: column; gap: 1rem; }
-    label { font-weight: bold; }
-    input { padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; }
-    .btn-primary { background: #28a745; color: white; padding: 0.75rem; border: none; border-radius: 4px; cursor: pointer; }
-    .btn-primary:hover { background: #218838; }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="navbar">
-  <h2>FaSTI - Sistem Administrasi Non-Akademik FSTI</h2>
-  <nav>
-    <a href="index.html">Beranda</a>
-    <a href="#">Lacak Pengajuan</a>
-  </nav>
+<header>
+  <h1>FaSTI - Sistem Administrasi Non-Akademik</h1>
 </header>
 
-<main class="container">
-  <p class="breadcrumb">
-    Beranda / Perizinan Kegiatan / <strong>Izin Kegiatan Organisasi</strong>
-  </p>
+<nav>
+  <a href="index.html">Beranda</a>
+  <a href="izin.html">Perizinan Kegiatan</a>
+</nav>
 
-  <div class="card">
-    <h1>Izin Kegiatan Organisasi</h1>
+<main>
+  <div class="breadcrumb">
+    Beranda / Perizinan Kegiatan / Izin Kegiatan Organisasi
+  </div>
+
+  <section class="card">
+    <h2>Izin Kegiatan Organisasi</h2>
     <p>Izin untuk kegiatan organisasi mahasiswa</p>
 
-    <div class="card-content">
+    <div class="info">
       <div>
         <strong>Persyaratan:</strong>
         <ul>
@@ -44,67 +37,19 @@
 
       <div>
         <strong>Waktu Proses:</strong>
-        <p>3-5 hari kerja</p>
+        <p>3–5 hari kerja</p>
       </div>
     </div>
-  </div>
 
-  <div class="card">
-    <h2>Form Pengajuan Permohonan</h2>
-
-    <form action="/submit-izin" method="post" enctype="multipart/form-data">
-      <label for="nama-lengkap">Nama Lengkap *</label>
-      <input type="text" id="nama-lengkap" name="nama_lengkap" placeholder="Masukkan nama lengkap" required>
-
-      <label for="nim-nip">NIM / NIP *</label>
-      <input type="text" id="nim-nip" name="nim_nip" placeholder="Masukkan NIM / NIP" required>
-
-      <label for="nama-organisasi">Nama Organisasi *</label>
-      <input type="text" id="nama-organisasi" name="nama_organisasi" placeholder="Masukkan nama organisasi" required>
-
-      <label for="nama-kegiatan">Nama Kegiatan *</label>
-      <input type="text" id="nama-kegiatan" name="nama_kegiatan" placeholder="Masukkan nama kegiatan" required>
-
-      <label for="surat-pengantar">Upload Surat Pengantar *</label>
-      <input type="file" id="surat-pengantar" name="surat_pengantar" accept=".pdf,.doc,.docx" required>
-
-      <label for="jadwal">Jadwal Pelaksanaan *</label>
-      <input type="date" id="jadwal" name="jadwal" required>
-
-      <label for="proposal">Upload Proposal *</label>
-      <input type="file" id="proposal" name="proposal" accept=".pdf,.doc,.docx" required>
-
-      <button type="submit" class="btn-primary">Kirim Permohonan</button>
-    </form>
-  </div>
-
+    <button onclick="window.location.href='pengajuan.html'">
+      Ajukan Izin
+    </button>
+  </section>
 </main>
 
-<script>
-  // Validasi sisi klien sebelum submit
-  document.querySelector('form').addEventListener('submit', function(e) {
-    const nama = document.getElementById('nama-lengkap').value.trim();
-    const nim = document.getElementById('nim-nip').value.trim();
-    const org = document.getElementById('nama-organisasi').value.trim();
-    const keg = document.getElementById('nama-kegiatan').value.trim();
-    const surat = document.getElementById('surat-pengantar').files[0];
-    const jadwal = document.getElementById('jadwal').value;
-    const proposal = document.getElementById('proposal').files[0];
-
-    if (!nama || !nim || !org || !keg || !surat || !jadwal || !proposal) {
-      alert('Semua field wajib diisi!');
-      e.preventDefault();
-      return;
-    }
-
-    // Validasi tipe file
-    const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
-    if (!allowedTypes.includes(surat.type) || !allowedTypes.includes(proposal.type)) {
-      alert('File harus berupa PDF atau DOC/DOCX!');
-      e.preventDefault();
-    }
-  });
-</script>
+<footer>
+  <p>© 2025 FaSTI</p>
+</footer>
 
 </body>
 </html>
