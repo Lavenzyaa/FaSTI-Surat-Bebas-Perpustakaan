@@ -1,117 +1,99 @@
-/* Reset dasar */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
+    margin: 0;
     font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
-    padding: 20px;
+    background-color: #f5f7fa;
 }
 
-/* Header */
+/* HEADER */
 .top-header {
+    background-color: #ffffff;
+    padding: 15px 30px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
 }
 
-.logo h2 {
-    margin-bottom: 5px;
-}
-
-nav a {
-    color: white;
-    margin-left: 15px;
+.top-header nav a {
+    margin-left: 20px;
     text-decoration: none;
+    color: #333;
 }
 
-/* Breadcrumb */
+/* BREADCRUMB */
 .breadcrumb {
-    background-color: #e9ecef;
-    padding: 10px;
-    margin-bottom: 20px;
+    padding: 15px 30px;
+    font-size: 14px;
+    color: #555;
 }
 
-/* Main Content */
-.card {
-    background-color: white;
+/* MAIN */
+main {
+    display: flex;
+    justify-content: center;
     padding: 20px;
+}
+
+.card {
+    background: white;
+    width: 800px;
+    padding: 25px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    max-width: 600px;
-    margin: 0 auto;
 }
 
 .subtitle {
     color: #666;
-    margin-bottom: 20px;
 }
 
+/* INFO BOX */
 .info-box {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    background-color: #f0f4ff;
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 15px;
 }
 
-.info-box div {
-    flex: 1;
-    margin: 0 10px;
+hr {
+    margin: 30px 0;
 }
 
-ul {
-    list-style-type: disc;
-    margin-left: 20px;
-}
-
-/* Form */
-form {
-    display: flex;
-    flex-direction: column;
-}
-
+/* FORM */
 label {
-    margin-top: 10px;
-    font-weight: bold;
+    display: block;
+    margin-top: 15px;
 }
 
 input, textarea {
-    padding: 10px;
+    width: 100%;
+    padding: 8px;
     margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
 }
 
 button {
     margin-top: 20px;
     padding: 10px;
-    background-color: #28a745;
+    width: 100%;
+    background-color: #4b6cb7;
     color: white;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #3b5998;
 }
 
 #pesan {
-    margin-top: 20px;
-    color: red; /* Akan diubah oleh JS */
+    margin-top: 15px;
+    font-weight: bold;
 }
 
-/* Footer */
+/* FOOTER */
 footer {
+    margin-top: 40px;
+    padding: 15px;
     text-align: center;
-    margin-top: 20px;
-    font-size: 0.9em;
-    color: #666;
+    font-size: 12px;
+    color: #555;
 }
