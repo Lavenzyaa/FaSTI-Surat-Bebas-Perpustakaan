@@ -1,32 +1,39 @@
-document.getElementById('formCuti').addEventListener('submit', function(event) {
-    event.preventDefault(); // Mencegah pengiriman form default
+// ===== FORM VALIDATION & SUBMIT HANDLER =====
+document.addEventListener("DOMContentLoaded", function () {
 
-    // Ambil nilai input
-    const nama = document.getElementById('nama').value.trim();
-    const nim = document.getElementById('nim').value.trim();
-    const prodi = document.getElementById('prodi').value.trim();
-    const semester = document.getElementById('semester').value;
-    const alasan = document.getElementById('alasan').value.trim();
-    const pesan = document.getElementById('pesan');
+  const form = document.querySelector("form");
 
-    // Validasi sederhana
-    if (!nama || !nim || !prodi || !semester || !alasan) {
-        pesan.textContent = 'Harap isi semua field yang wajib!';
-        pesan.style.color = 'red';
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault(); // mencegah reload halaman
+
+      const inputs = form.querySelectorAll("input[required]");
+      let valid = true;
+
+      inputs.forEach(input => {
+        if (input.value.trim() === "") {
+          input.style.border = "2px solid red";
+          valid = false;
+        } else {
+          input.style.border = "1px solid #ccc";
+        }
+      });
+
+      if (!valid) {
+        alert("⚠️ Harap lengkapi semua data yang wajib diisi!");
         return;
-    }
+      }
 
-    // Validasi NIM (misalnya, harus angka dan panjang tertentu)
-    if (!/^\d{9,10}$/.test(nim)) { // Asumsikan NIM 9-10 digit
-        pesan.textContent = 'NIM harus berupa angka dengan panjang 9-10 digit!';
-        pesan.style.color = 'red';
-        return;
-    }
+      // Konfirmasi pengiriman
+      const confirmSubmit = confirm(
+        "Apakah data yang Anda masukkan sudah benar?"
+      );
 
-    // Simulasi pengiriman (ganti dengan fetch ke server)
-    pesan.textContent = 'Pengajuan berhasil dikirim! Anda akan menerima konfirmasi dalam 3-5 hari kerja.';
-    pesan.style.color = 'green';
+      if (confirmSubmit) {
+        alert("✅ Permohonan berhasil dikirim!\nSilakan menunggu proses verifikasi.");
+        form.reset();
+      }
+    });
+  }
 
-    // Reset form setelah sukses
-    this.reset();
 });
