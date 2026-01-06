@@ -1,24 +1,32 @@
-document.getElementById("formBebasPustaka").addEventListener("submit", function(e) {
-    e.preventDefault();
+document.getElementById('formCuti').addEventListener('submit', function(event) {
+    event.preventDefault(); // Mencegah pengiriman form default
 
-    let nama = document.getElementById("nama").value;
-    let nim = document.getElementById("nim").value;
-    let prodi = document.getElementById("prodi").value;
-    let statusBuku = document.getElementById("statusBuku").value;
-    let pesan = document.getElementById("pesan");
+    // Ambil nilai input
+    const nama = document.getElementById('nama').value.trim();
+    const nim = document.getElementById('nim').value.trim();
+    const prodi = document.getElementById('prodi').value.trim();
+    const semester = document.getElementById('semester').value;
+    const alasan = document.getElementById('alasan').value.trim();
+    const pesan = document.getElementById('pesan');
 
-    if (nama === "" || nim === "" || prodi === "" || statusBuku === "") {
-        pesan.style.color = "red";
-        pesan.innerText = "❌ Semua data wajib diisi!";
+    // Validasi sederhana
+    if (!nama || !nim || !prodi || !semester || !alasan) {
+        pesan.textContent = 'Harap isi semua field yang wajib!';
+        pesan.style.color = 'red';
         return;
     }
 
-    if (statusBuku === "ada") {
-        pesan.style.color = "red";
-        pesan.innerText = "❌ Pengajuan ditolak. Masih ada pinjaman buku.";
-    } else {
-        pesan.style.color = "green";
-        pesan.innerText = "✅ Pengajuan surat bebas perpustakaan berhasil dikirim.";
-        document.getElementById("formBebasPustaka").reset();
+    // Validasi NIM (misalnya, harus angka dan panjang tertentu)
+    if (!/^\d{9,10}$/.test(nim)) { // Asumsikan NIM 9-10 digit
+        pesan.textContent = 'NIM harus berupa angka dengan panjang 9-10 digit!';
+        pesan.style.color = 'red';
+        return;
     }
+
+    // Simulasi pengiriman (ganti dengan fetch ke server)
+    pesan.textContent = 'Pengajuan berhasil dikirim! Anda akan menerima konfirmasi dalam 3-5 hari kerja.';
+    pesan.style.color = 'green';
+
+    // Reset form setelah sukses
+    this.reset();
 });
