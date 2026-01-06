@@ -2,57 +2,81 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Pengajuan Surat Bebas Perpustakaan</title>
+    <title>Surat Cuti Mahasiswa</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-    <h1>Portal Layanan Mahasiswa</h1>
+<!-- HEADER -->
+<header class="top-header">
+    <div class="logo">
+        <h2>FaSTI - Sistem Administrasi Non-Akademik</h2>
+        <small>Fakultas Sains dan Teknologi Informasi</small>
+    </div>
     <nav>
         <a href="#">Beranda</a>
-        <a href="#">Layanan</a>
-        <a href="#">Profil</a>
+        <a href="#">Lacak Pengajuan</a>
     </nav>
 </header>
 
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+    Beranda / Perizinan / <b>Surat Cuti</b>
+</div>
+
+<!-- MAIN CONTENT -->
 <main>
-    <section class="container">
-        <h2>Form Pengajuan Surat Bebas Perpustakaan</h2>
+    <section class="card">
+        <h1>Surat Cuti Mahasiswa</h1>
+        <p class="subtitle">Pengajuan cuti akademik mahasiswa</p>
 
-        <form id="formBebasPustaka">
-            <label>Nama Lengkap</label>
-            <input type="text" id="nama">
+        <div class="info-box">
+            <div>
+                <h4>📄 Persyaratan</h4>
+                <ul>
+                    <li>Surat permohonan cuti</li>
+                    <li>Persetujuan orang tua</li>
+                    <li>Alasan cuti jelas</li>
+                </ul>
+            </div>
+            <div>
+                <h4>⏱ Waktu Proses</h4>
+                <p>3 - 5 hari kerja</p>
+            </div>
+        </div>
 
-            <label>NIM</label>
-            <input type="text" id="nim">
+        <hr>
 
-            <label>Program Studi</label>
+        <h3>Form Pengajuan Permohonan</h3>
+
+        <form id="formCuti">
+            <label>Nama Lengkap *</label>
+            <input type="text" id="nama" placeholder="Masukkan nama lengkap">
+
+            <label>NIM *</label>
+            <input type="text" id="nim" placeholder="Masukkan NIM">
+
+            <label>Program Studi *</label>
             <input type="text" id="prodi">
 
-            <label>Status Peminjaman Buku</label>
-            <select id="statusBuku">
-                <option value="">-- Pilih Status --</option>
-                <option value="tidak">Tidak Ada Pinjaman</option>
-                <option value="ada">Masih Ada Pinjaman</option>
-            </select>
+            <label>Semester *</label>
+            <input type="number" id="semester">
 
-            <label>Keterangan Tambahan</label>
-            <textarea id="keterangan"></textarea>
+            <label>Alasan Cuti *</label>
+            <textarea id="alasan"></textarea>
 
-            <button type="submit">Ajukan Surat</button>
+            <button type="submit">Ajukan Permohonan</button>
         </form>
 
         <p id="pesan"></p>
     </section>
 </main>
 
+<!-- FOOTER -->
 <footer>
-    <p>
-        Referensi pengembangan fitur dan alur sistem ini mengacu pada 
-        Portal Layanan Mahasiswa FaSTI – Sistem Informasi Layanan Mahasiswa
-        (fasti.roniwahyu.com) sebagai sumber inspirasi fungsional tugas akhir.
-    </p>
+    Referensi pengembangan fitur dan alur sistem ini mengacu pada 
+    Portal Layanan Mahasiswa FaSTI – Sistem Informasi Layanan Mahasiswa 
+    (fasti.roniwahyu.com) sebagai sumber inspirasi fungsional tugas akhir.
 </footer>
 
 <script src="script.js"></script>
