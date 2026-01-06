@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Pengajuan Surat Bebas Perpustakaan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Portal Layanan Mahasiswa</h1>
+    <nav>
+        <a href="#">Beranda</a>
+        <a href="#">Layanan</a>
+        <a href="#">Profil</a>
+    </nav>
+</header>
+
+<main>
+    <section class="container">
+        <h2>Form Pengajuan Surat Bebas Perpustakaan</h2>
+
+        <form id="formBebasPustaka">
+            <label>Nama Lengkap</label>
+            <input type="text" id="nama">
+
+            <label>NIM</label>
+            <input type="text" id="nim">
+
+            <label>Program Studi</label>
+            <input type="text" id="prodi">
+
+            <label>Status Peminjaman Buku</label>
+            <select id="statusBuku">
+                <option value="">-- Pilih Status --</option>
+                <option value="tidak">Tidak Ada Pinjaman</option>
+                <option value="ada">Masih Ada Pinjaman</option>
+            </select>
+
+            <label>Keterangan Tambahan</label>
+            <textarea id="keterangan"></textarea>
+
+            <button type="submit">Ajukan Surat</button>
+        </form>
+
+        <p id="pesan"></p>
+    </section>
+</main>
+
+<footer>
+    <p>
+        Referensi pengembangan fitur dan alur sistem ini mengacu pada 
+        Portal Layanan Mahasiswa FaSTI – Sistem Informasi Layanan Mahasiswa
+        (fasti.roniwahyu.com) sebagai sumber inspirasi fungsional tugas akhir.
+    </p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
